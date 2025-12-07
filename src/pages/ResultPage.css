@@ -1,0 +1,47 @@
+/* src/pages/ResultPage.css */
+
+.result-title {
+  color: #2196F3;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.result-desc {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* 상세 분석표 박스 */
+.analysis-box {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* "상세 분석표" 제목 */
+.analysis-title {
+  margin: 0 0 15px 0;
+  color: #333; /* 글자색도 살짝 진하게 추가해주면 예쁩니다 */
+  font-size: 1.2rem;
+}
+
+.btn-reset {
+  margin-top: 30px;
+}
+
+/* 👇 [수정 후] 클래스 두 개를 붙여서 힘을 2배로 만듦! (띄어쓰기 없이 붙여야 함) */
+.btn-primary.btn-share {
+  background-color: #2196F3; /* 혹시 몰라 !important를 넣어 확실하게 제압 */
+  color: white; /* 글자색도 확실하게 */
+}
+
+/* 마우스 올렸을 때도 똑같이 강력하게 */
+.btn-primary.btn-share:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px); /* 호버 효과 유지 */
+}

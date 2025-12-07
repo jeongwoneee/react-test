@@ -1,0 +1,22 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  font-family: 'Suit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
