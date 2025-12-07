@@ -1,22 +1,19 @@
 // src/pages/ResultPage.jsx
 import React from 'react';
 import './ResultPage.css';
-import ProgressBar from '../components/ProgressBar'; // 👈 재사용을 위해 불러옴!
+import ProgressBar from '../components/ProgressBar';
 import { typeParams, questions } from '../data/questionData';
 
 const ResultPage = ({ result, scores, onReset, type }) => {
   const isSharedResult = Object.values(scores).reduce((a, b) => a + b, 0) === 0;
   const scoreItems = typeParams.map(info => ({
-    label: info.label,        // 데이터 파일에서 가져온 이름 ("🎨 프론트엔드")
-    score: scores[info.type]  // 점수판에서 해당 타입의 점수 꺼내오기 (예: scores['F'])
+    label: info.label,      
+    score: scores[info.type] 
   }));
 
-  // [유지보수 포인트] 현재 도메인을 자동으로 감지하여 링크 생성
   const handleShare = () => {
-    // window.location.origin은 'http://localhost:5173' 같은 도메인을 자동으로 가져옴
     const shareUrl = `${window.location.origin}/?mbti=${type}`;
     
-    // 최신 브라우저 API 사용 (비동기 처리)
     navigator.clipboard.writeText(shareUrl)
       .then(() => alert('결과 링크가 복사되었습니다! 친구에게 공유해보세요.'))
       .catch(() => alert('링크 복사에 실패했습니다.'));
@@ -28,7 +25,6 @@ const ResultPage = ({ result, scores, onReset, type }) => {
       <h2 className="result-title">{result.title}</h2>
       <p className="result-desc">{result.desc}</p>
 
-     {/* 👇 [수정] 공유받은 결과가 아닐 때(!isSharedResult)만 상세 분석표를 보여줌 */}
       {!isSharedResult && (
         <div className="analysis-box">
           <h3 className="analysis-title">📊 상세 분석표</h3>
