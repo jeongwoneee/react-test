@@ -5,10 +5,7 @@ import ProgressBar from '../components/ProgressBar'; // 👈 재사용을 위해
 import { typeParams, questions } from '../data/questionData';
 
 const ResultPage = ({ result, scores, onReset, type }) => {
-  // 👇 [추가] 점수가 전부 0점인지 확인 (공유받은 상태인지 체크)
   const isSharedResult = Object.values(scores).reduce((a, b) => a + b, 0) === 0;
-  // 점수를 배열로 변환해서 반복문 돌리기 편하게 만듦
-// (typeParams 배열을 돌면서 -> 현재 점수(scores)와 합체)
   const scoreItems = typeParams.map(info => ({
     label: info.label,        // 데이터 파일에서 가져온 이름 ("🎨 프론트엔드")
     score: scores[info.type]  // 점수판에서 해당 타입의 점수 꺼내오기 (예: scores['F'])
@@ -51,7 +48,6 @@ const ResultPage = ({ result, scores, onReset, type }) => {
            >
              🔗 결과 공유하기
       </button>
-      {/* 👆 여기까지 */}
 
       <button className="btn-primary btn-reset" onClick={onReset}>
         다시 테스트하기
