@@ -17,6 +17,7 @@ h2.question-text {
   border-radius: 12px;
   color: #495057;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .btn-answer:hover {

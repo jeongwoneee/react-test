@@ -2,11 +2,9 @@
 import React from 'react';
 import './ResultPage.css';
 import ProgressBar from '../components/ProgressBar'; // 👈 재사용을 위해 불러옴!
-import { typeParams } from '../data/questionData';
+import { typeParams, questions } from '../data/questionData';
 
 const ResultPage = ({ result, scores, onReset, type }) => {
-  if (!result) return <div>결과를 분석 중입니다...</div>;
-
   // 👇 [추가] 점수가 전부 0점인지 확인 (공유받은 상태인지 체크)
   const isSharedResult = Object.values(scores).reduce((a, b) => a + b, 0) === 0;
   // 점수를 배열로 변환해서 반복문 돌리기 편하게 만듦
@@ -42,7 +40,7 @@ const ResultPage = ({ result, scores, onReset, type }) => {
               key={idx} 
               label={item.label} 
               current={item.score} 
-              total={7} 
+              total={questions.length}
             />
           ))}
         </div>
